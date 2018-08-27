@@ -11,6 +11,7 @@ omit =
     *manage.py
     *apps.py
     *env*
+    *storage.py
 
 [report]
 precision = 2
