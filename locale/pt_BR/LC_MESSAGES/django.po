@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Adriano Margarin <adriano.margarin@gmail.com>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: schedules\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-13 00:00-0300\n"
+"PO-Revision-Date: 2018-08-13 00:00-0300\n"
+"Last-Translator: Adriano Margarin <adriano.margarin@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <LL@li.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Auditing"
+msgstr "Auditória"
+
+msgid "Created at"
+msgstr "Criado em"
+
+msgid "Updated at"
+msgstr "Atualizado em"
+
+msgid "Deleted at"
+msgstr "Deletado em"

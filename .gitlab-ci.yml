@@ -1,0 +1,41 @@
+stages:
+  - test
+  - deploy-staging
+  - deploy-production
+
+cleancode:
+  image: python:3.6
+  stage: test
+  before_script:
+    - pip install flake8
+  script:
+    - flake8 --config=.flake8
+
+test:
+  image: python:3.6
+  stage: test
+  services:
+    - postgres:latest
+  before_script:
+    - cp contrib/env-sample .env
+    - pip install -r requirements_dev.txt
+  script:
+    - coverage run --source='.' manage.py test --verbosity=1
+    - coverage report --show-missing
+
+staging:
+  stage: deploy-staging
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=<app-name> --api-key=$HEROKU_STAGING_API_KEY
+  only:
+    - dev
+
+production:
+  stage: deploy-production
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=<app-name> --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+    - master
+

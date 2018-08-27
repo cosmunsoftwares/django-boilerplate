@@ -1,0 +1,16 @@
+[run]
+#ignore all settings
+omit =
+    *settings.py
+    *tests/*
+    *migrations/*
+    *urls.py
+    *__init__*
+    *admin.py
+    *wsgi.py
+    *manage.py
+    *apps.py
+    *env*
+
+[report]
+precision = 2

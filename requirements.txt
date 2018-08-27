@@ -1,0 +1,27 @@
+# Application
+
+Django
+psycopg2
+psycopg2-binary
+static3
+gunicorn
+dj-database-url
+dj-static
+python-decouple
+django-widget-tweaks
+django-extensions
+django-auditlog
+django-storages
+boto3
+pytz
+
+# Django Rest Framework
+
+djangorestframework
+itsdangerous
+django-cors-headers
+
+# Django Tests
+
+django-test-without-migrations
+ipython
