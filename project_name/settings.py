@@ -49,8 +49,6 @@ EXTRA_APPS = [
     'test_without_migrations',
     'widget_tweaks',
     'django_extensions',
-    'rest_framework',
-    'corsheaders',
     'storages',
 ]
 
@@ -167,28 +165,3 @@ DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files
 
 if DEFAULT_FILE_STORAGE == 'django.core.files.storage.FileSystemStorage':
     MEDIA_ROOT = os.path.join(BASE_DIR, 'project_name', 'media')
-
-# REST Framework Configuration
-
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    ),
-    'DEFAULT_PARSER_CLASSES': (
-        'rest_framework.parsers.JSONParser',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'project_name.api.auth.TokenAuthenticate',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'project_name.api.auth.IsUserAuthenticated',
-    ),
-    'NON_FIELD_ERRORS_KEY': '__all__',
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
-
-# 30 days
-EXPIRES_IN = 60*60*24*30
-
-CORS_ORIGIN_ALLOW_ALL = True
