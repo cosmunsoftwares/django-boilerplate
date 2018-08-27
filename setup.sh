@@ -38,16 +38,7 @@ then
 
     django-admin startproject --template https://github.com/cosmun-softwares/django-boilerplate/archive/master.zip $project_name .
 
-    # sed -i "s/project_name/$project_name/g" $project_name/wsgi.py
-    # sed -i "s/project_name/$project_name/g" $project_name/settings.py
-    # sed -i "s/project_name/$project_name/g" $project_name/urls.py
-    # sed -i "s/project_name/$project_name/g" $project_name/core/urls.py
-    # sed -i "s/project_name/$project_name/g" $project_name/core/apps.py
-    # sed -i "s/project_name/$project_name/g" $project_name/core/models.py
-    # sed -i "s/project_name/$project_name/g" manage.py
-
-    sed -i "s/project_name/$project_name/g" Procfile
-    sed -i 's/project_name/$project_name/g' *.py
+    find ./ -type f -exec sed -i s/project_name/$project_name/g {} \;
 
     pip install -r requirements_dev.txt
 
@@ -59,7 +50,17 @@ then
     echo -e "\e[32m##############################################################################################\e[0m"
     echo ""
 
+    python manage.py test
+
+    echo ""
+
     python manage.py check
+
+    echo ""
+    echo -e "\e[32m##############################################################################################\e[0m"
+    echo -e "\e[32m# Finalizado #################################################################################\e[0m"
+    echo -e "\e[32m##############################################################################################\e[0m"
+    echo ""
 else
     echo -e "\e[31m##############################################################################################\e[0m"
     echo -e "\e[31m# INFORME O NOME DO PROJETO ##################################################################\e[0m"
