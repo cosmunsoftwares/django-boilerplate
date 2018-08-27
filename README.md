@@ -1,3 +1,6 @@
+curl https://github.com/cosmun-softwares/django-boilerplate/blob/master/setup.sh | bash -s test_boiler
+
+
 # <README.md>
 
 ## Como desenvolver?
