@@ -1,6 +1,6 @@
 # Como usar
 
-curl -L http://bit.ly/cosmun-softwares-boilerplate | bash -s <project_name>
+curl -L http://bit.ly/cosmun-softwares-django-boilerplate | bash -s <project_name>
 
 
 # <README.md>
