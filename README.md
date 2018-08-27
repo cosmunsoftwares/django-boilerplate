@@ -1,4 +1,6 @@
-curl https://github.com/cosmun-softwares/django-boilerplate/blob/master/setup.sh | bash -s test_boiler
+# Como usar
+
+curl -L http://bit.ly/cosmun-softwares-boilerplate | bash -s <project_name>
 
 
 # <README.md>
@@ -27,7 +29,6 @@ python manage.py runserver
 ## Qualidade do código
 
 ```console
-pre-commit install
 flake8 --config=.flake8
 ```
 
