@@ -31,6 +31,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
+SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=False, cast=bool)
 
 # Application definition
 
@@ -142,26 +143,30 @@ LANGUAGES = [
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default='')
-
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default='')
-
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default='')
-
 AWS_QUERYSTRING_AUTH = False
 
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_AWS_BUCKET = config('STATIC_AWS_BUCKET', default='')
-
 STATICFILES_STORAGE = config('STATICFILES_STORAGE', default='django.contrib.staticfiles.storage.StaticFilesStorage')
 
-MEDIA_URL = '/media/'
-
+MEDIA_URL = config('MEDIA_URL', default='/media/')
 MEDIA_AWS_BUCKET = config('MEDIA_AWS_BUCKET', default='')
 
 DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files.storage.FileSystemStorage')
 
 if DEFAULT_FILE_STORAGE == 'django.core.files.storage.FileSystemStorage':
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'project_name', 'media')
+    MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'project_name/media'))
+
+# Email configuration
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default=[], cast=Csv())
+SERVER_EMAIL = config('SERVER_EMAIL', default=[], cast=Csv())
