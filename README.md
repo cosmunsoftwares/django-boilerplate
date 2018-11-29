@@ -16,7 +16,7 @@ curl -L http://bit.ly/cosmun-softwares-django-boilerplate | bash -s <project_nam
 6. Execute o runserver.
 
 ```console
-git clone git@bitbucket.org:cosmun/schedules.git
+git clone git@gitlab.com:agencia-mentor/cdl.git
 cd schedules
 virtualenv env --python=python3 # python 3.6 ou mais atual
 source env/bin/activate

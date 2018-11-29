@@ -36,13 +36,21 @@ then
     echo -e "\e[32m###############################################################################################\e[0m"
     echo ""
 
-    django-admin startproject --template https://github.com/cosmun-softwares/django-boilerplate/archive/master.zip $project_name .
+    django-admin startproject --template https://github.com/cosmunsoftwares/django-boilerplate/archive/master.zip $project_name .
 
     find ./ -type f -exec sed -i s/project_name/$project_name/g {} \;
 
     pip install -r requirements_dev.txt
 
     cp contrib/env-sample .env
+
+    echo ""
+    echo -e "\e[32m###############################################################################################\e[0m"
+    echo -e "\e[32m# REMOVENDO setup.py ##########################################################################\e[0m"
+    echo -e "\e[32m###############################################################################################\e[0m"
+    echo ""
+
+    rm setup.py
 
     echo ""
     echo -e "\e[32m##############################################################################################\e[0m"
@@ -61,6 +69,7 @@ then
     echo -e "\e[32m# Finalizado #################################################################################\e[0m"
     echo -e "\e[32m##############################################################################################\e[0m"
     echo ""
+
 else
     echo -e "\e[31m##############################################################################################\e[0m"
     echo -e "\e[31m# INFORME O NOME DO PROJETO ##################################################################\e[0m"
