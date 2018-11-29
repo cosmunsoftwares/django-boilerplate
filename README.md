@@ -48,6 +48,14 @@ heroku create minhainstancia
 heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
 heroku config:set DEBUG=False
 heroku config:set ALLOWED_HOSTS=.herokuapp.com
+heroku config:set EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+heroku config:set EMAIL_HOST=localhost
+heroku config:set EMAIL_PORT=25
+heroku config:set EMAIL_USE_TLS=False
+heroku config:set EMAIL_HOST_USER=
+heroku config:set EMAIL_HOST_PASSWORD=
+heroku config:set DEFAULT_FROM_EMAIL=
+heroku config:set SERVER_EMAIL=
 
 git push heroku master --force
 ```
