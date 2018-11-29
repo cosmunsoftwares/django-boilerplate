@@ -1,0 +1,19 @@
+- repo: local
+  hooks:
+    - id: flake8
+      name: Flake8
+      description: This hook runs flake8
+      entry: flake8 --config=.flake8
+      language: python
+
+- repo: git://github.com/pre-commit/pre-commit-hooks
+  sha: master
+  hooks:
+    - id: trailing-whitespace
+    - id: check-merge-conflict
+
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v4.3.4
+  hooks:
+  - id: isort
+    args: ['--check-only', '--diff']
