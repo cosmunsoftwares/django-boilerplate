@@ -16,8 +16,8 @@ curl -L http://bit.ly/cosmun-softwares-django-boilerplate | bash -s <project_nam
 6. Execute o runserver.
 
 ```console
-git clone git@gitlab.com:agencia-mentor/cdl.git
-cd schedules
+git <git url>
+cd project_name
 virtualenv env --python=python3 # python 3.6 ou mais atual
 source env/bin/activate
 pip install -r requirements_dev.txt
@@ -46,7 +46,7 @@ flake8 --config=.flake8
 heroku create minhainstancia
 
 heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
-heroku config:set DEBUG=False
+heroku config:set DEBUG=True
 heroku config:set ALLOWED_HOSTS=.herokuapp.com
 heroku config:set EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
 heroku config:set EMAIL_HOST=localhost
