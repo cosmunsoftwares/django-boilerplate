@@ -11,9 +11,3 @@
   hooks:
     - id: trailing-whitespace
     - id: check-merge-conflict
-
-- repo: https://github.com/pre-commit/mirrors-isort
-  rev: v4.3.4
-  hooks:
-  - id: isort
-    args: ['--check-only', '--diff']

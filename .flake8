@@ -22,5 +22,8 @@ exclude =
     *.json
     *.txt
     *.markdown
+    *.coveragerc
+    *LICENSE*
+    *contrib/*
 max-line-length = 119
 format = pylint
