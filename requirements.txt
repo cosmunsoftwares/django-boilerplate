@@ -10,7 +10,6 @@ dj-static
 python-decouple
 django-widget-tweaks
 django-extensions
-django-auditlog
 django-storages
 boto3
 pytz
@@ -20,6 +19,9 @@ pytz
 djangorestframework
 itsdangerous
 django-cors-headers
+
+# Auditlog
+-e git+https://github.com/cosmunsoftwares/django-auditlog#egg=django-auditlog
 
 # Django Tests
 
