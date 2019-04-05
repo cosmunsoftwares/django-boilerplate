@@ -2,6 +2,7 @@
 
 Django
 Pillow
+psycopg2
 psycopg2-binary
 static3
 gunicorn
