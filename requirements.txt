@@ -1,7 +1,7 @@
 # Application
 
 Django
-psycopg2
+Pillow
 psycopg2-binary
 static3
 gunicorn
@@ -14,16 +14,9 @@ django-storages
 boto3
 pytz
 
-# Django Rest Framework
-
-djangorestframework
-itsdangerous
-django-cors-headers
-
 # Auditlog
 -e git+https://github.com/cosmunsoftwares/django-auditlog#egg=django-auditlog
 
 # Django Tests
-
 django-test-without-migrations
 ipython
