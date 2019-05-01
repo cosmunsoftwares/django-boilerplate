@@ -16,7 +16,7 @@ boto3
 pytz
 
 # Auditlog
--e git+https://github.com/cosmunsoftwares/django-auditlog#egg=django-auditlog
+git+https://github.com/cosmunsoftwares/django-auditlog.git
 
 # Django Tests
 django-test-without-migrations
