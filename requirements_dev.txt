@@ -6,3 +6,4 @@ mock
 model-mommy
 flake8
 vcrpy
+pre-commit

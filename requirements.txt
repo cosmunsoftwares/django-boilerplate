@@ -1,23 +1,25 @@
 # Application
 
-Django
-Pillow
-psycopg2
-psycopg2-binary
-static3
-gunicorn
-dj-database-url
-dj-static
-python-decouple
-django-widget-tweaks
-django-extensions
-django-storages
-boto3
+Django==2.2.1
+Pillow==6.0.0
+psycopg2==2.7.7
+psycopg2-binary==2.7.7
+static3==0.7.0
+gunicorn==19.9.0
+dj-database-url==0.5.0
+dj-static==0.0.6
+python-decouple==3.1
+django-widget-tweaks==1.4.3
+django-extensions==2.1.6
+django-storages==1.7.1
+boto3==1.9.143
+requests==2.21.0
 pytz
 
 # Auditlog
 git+https://github.com/cosmunsoftwares/django-auditlog.git
 
 # Django Tests
+
 django-test-without-migrations
 ipython
