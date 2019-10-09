@@ -13,4 +13,4 @@ class HomeTest(TestCase):
 
     def test_template(self):
         '''Home must use template index.html'''
-        self.assertTemplateUsed(self.response, 'core/index.html')
+        self.assertTemplateUsed(self.response, 'core/home.html')

@@ -9,3 +9,4 @@ class AuditlogCustomConfig(AuditlogConfig):
 
 class CoreConfig(AppConfig):
     name = 'project_name.core'
+    verbose_name = 'Configurações'
