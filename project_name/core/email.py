@@ -12,6 +12,6 @@ def send_mail(template, to_email, subject, context={}, attachments=None):
             message.attachments = attachments
 
         message.attach_alternative(body, "text/html")
-        return message.send()
+        return {'ok': message.send()}
     except Exception as e:
-        return e.args[0]
+        return {'error': e.args[0]}
