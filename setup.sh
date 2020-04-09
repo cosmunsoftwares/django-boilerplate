@@ -40,7 +40,7 @@ then
 
 if [ $2 ]
 then
-    find ./ -type f -exec sed -i '' -e 's/project_name/$project_name/g' {} \;
+    find ./ -type f -exec sed -i '' -e s/project_name/$project_name/g {} \;
 else
     find ./ -type f -exec sed -i s/project_name/$project_name/g {} \;
 fi
@@ -55,7 +55,7 @@ fi
     echo -e "\e[32m###############################################################################################\e[0m"
     echo ""
 
-    # rm setup.py
+    rm -f setup.sh
 
     echo ""
     echo -e "\e[32m##############################################################################################\e[0m"

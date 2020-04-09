@@ -1,7 +1,10 @@
 # Como usar
 
+## LINUX
 curl -L https://raw.githubusercontent.com/cosmun-softwares/django-boilerplate/api/setup.sh | bash -s <project_name>
 
+## MAC
+curl -L https://raw.githubusercontent.com/cosmun-softwares/django-boilerplate/api/setup.sh | bash -s <project_name> -s osx
 
 # <README.md>
 
