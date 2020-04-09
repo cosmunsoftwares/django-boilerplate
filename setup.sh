@@ -38,7 +38,12 @@ then
 
     django-admin startproject --template https://github.com/cosmunsoftwares/django-boilerplate/archive/master.zip $project_name .
 
+if [ $2 ]
+then
+    find ./ -type f -exec sed -i '' -e 's/project_name/$project_name/g' {} \;
+else
     find ./ -type f -exec sed -i s/project_name/$project_name/g {} \;
+fi
 
     pip install -r requirements_dev.txt
 
