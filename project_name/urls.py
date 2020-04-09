@@ -25,6 +25,9 @@ admin.site.index_title = 'Administração'
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    # API
+    path('api/v1/', include('project_name.api.v1.urls', namespace='api-v1')),
+
     # HOME
     path('', include('project_name.core.urls', namespace='core')),
 ]

@@ -57,12 +57,15 @@ EXTRA_APPS = [
     'django_cleanup.apps.CleanupConfig',
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    'project_name.custom_profile.apps.CustomProfileConfig',
+]
 
 INSTALLED_APPS += EXTRA_APPS
 INSTALLED_APPS += PROJECT_APPS
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -167,6 +170,32 @@ DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE', default='django.core.files
 
 if DEFAULT_FILE_STORAGE == 'django.core.files.storage.FileSystemStorage':
     MEDIA_ROOT = config('MEDIA_ROOT', default=os.path.join(BASE_DIR, 'project_name/media'))
+
+# REST Framework Configuration
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.MultiPartParser',
+        'rest_framework.parsers.FormParser'
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'project_name.api.v1.auth.TokenAuthenticate',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'project_name.api.v1.auth.IsUserAuthenticated',
+    ),
+    'NON_FIELD_ERRORS_KEY': '__all__',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+# 30 days
+EXPIRES_IN = 60*60*24*30
 
 # Email configuration
 

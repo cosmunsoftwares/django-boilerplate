@@ -25,3 +25,8 @@ git+https://github.com/cosmunsoftwares/django-auditlog.git
 
 # BACKUP
 django-dbbackup
+
+# Django Rest Framework
+djangorestframework
+itsdangerous
+django-cors-headers
