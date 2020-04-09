@@ -38,6 +38,7 @@ SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=False, cast=bool)
 
 INSTALLED_APPS = [
     'project_name.core.apps.CoreConfig',
+    'project_name.core.apps.SuitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +53,8 @@ EXTRA_APPS = [
     'widget_tweaks',
     'django_extensions',
     'storages',
+    'dbbackup',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 PROJECT_APPS = []
@@ -176,4 +179,14 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 SERVER_EMAIL = config('SERVER_EMAIL', default=[], cast=Csv())
 
+# Upload Permission
+
 FILE_UPLOAD_PERMISSIONS = 0o775
+
+# Backup
+
+DBBACKUP_STORAGE_OPTIONS = {'location': os.path.join(BASE_DIR, 'backup/compressed')}
+DBBACKUP_CLEANUP_KEEP = 12
+DBBACKUP_CLEANUP_KEEP_MEDIA = DBBACKUP_CLEANUP_KEEP
+DBBACKUP_FILENAME_TEMPLATE = '{databasename}-{datetime}.{extension}'
+DBBACKUP_MEDIA_FILENAME_TEMPLATE = DBBACKUP_FILENAME_TEMPLATE

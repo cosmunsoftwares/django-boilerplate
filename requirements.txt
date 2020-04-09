@@ -1,6 +1,6 @@
 # Application
 
-Django
+Django==2.2.8
 Pillow
 psycopg2==2.7.7
 psycopg2-binary==2.7.7
@@ -12,14 +12,16 @@ python-decouple
 django-widget-tweaks
 django-extensions
 django-storages
+django-cleanup
 boto3
 requests
 pytz
 
+# Django Admin
+https://github.com/andrewyager/django-suit/tarball/andrewyager-patch-1
+
 # Auditlog
 git+https://github.com/cosmunsoftwares/django-auditlog.git
 
-# Django Tests
-
-django-test-without-migrations
-ipython
+# BACKUP
+django-dbbackup

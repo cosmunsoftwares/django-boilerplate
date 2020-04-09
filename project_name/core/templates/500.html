@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <div class="d-flex align-items-center mt-5">
+            <h1 class="text-danger" style="font-size: 5rem;">500</h1>
+            <div class="ml-5">
+              <h3><i class="fas fa-exclamation-triangle text-danger"></i>Oops! Erro interno.</h3>
+              <p>
+                Tente recarregar a página ou contate-nos se o problema persistir.
+                Enquanto isso, você pode <a href="{% url 'core:home' %}">retornar para a página principal</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

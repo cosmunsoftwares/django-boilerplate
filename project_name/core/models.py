@@ -29,4 +29,8 @@ class AbstractBaseModel(models.Model):
         post_soft_delete.send(sender=type(self), instance=self, using=self._state.db)
 
     def __str__(self):
+        if hasattr(self, 'name'):
+            return self.name
+        if hasattr(self, 'title'):
+            return self.title
         return str(self.pk)

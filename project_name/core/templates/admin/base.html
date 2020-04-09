@@ -1,0 +1,42 @@
+{% extends 'admin/base.html' %}
+{% load staticfiles %}
+
+{% block extrahead %}
+<link rel="shortcut icon" type="image/png" href="{% static 'img/icon/favicon.png' %}"/>
+{% endblock %}
+
+{% block branding %}
+  <h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+      <img src="{% static 'img/icon/favicon.png' %}" width="20%" style="margin-bottom: 1rem;" />
+      <!-- <br> -->
+      {{ site_title|default:_('Django site admin') }}
+    </a>
+  </h1>
+{% endblock %}
+
+{% block footer %}
+
+  <div id="footer">
+    <footer class="footer">
+      <div class="container-fluid">
+        {% block footer_content %}
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-6 text-sm-center footer-copyright">
+            {% block copyright %}
+              Copyright &copy;
+              <span class="hidden-md-down"></span>{% now "Y" %} Cosmun Softwares
+              <br>Desenvolvido por <a href="http://cosmunsoftwares.com.br" target="_blank">Cosmun Softwares</a>
+            {% endblock %}
+          </div>
+
+        </div>
+        {% endblock %}
+      </div>
+    </footer>
+  </div>
+
+  <script src="{% static "suit/js/suit.js" %}"></script>
+
+{% endblock %}

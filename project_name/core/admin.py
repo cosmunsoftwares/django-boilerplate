@@ -32,4 +32,4 @@ def redirect_one_object(model, obj):
 
 
 def thumbnail(obj, size='col-md-2'):
-    return mark_safe('<img src="'+obj.url+'" class="img-thumbnail '+size+' p-0">')
+    return mark_safe('<img src="{}" class="img-thumbnail {} p-0">'.format(obj.url, size))

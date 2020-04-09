@@ -107,3 +107,13 @@ venv.bak/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Media
+media/
+
+# VsCode
+.vscode
+.DS_Store
+
+# Services
+*.pid
