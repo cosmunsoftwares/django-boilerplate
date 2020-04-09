@@ -1,6 +1,6 @@
 # Como usar
 
-curl -L http://bit.ly/cosmun-softwares-django-boilerplate | bash -s <project_name>
+curl -L https://raw.githubusercontent.com/cosmun-softwares/django-boilerplate/api/setup.sh | bash -s <project_name>
 
 
 # <README.md>
